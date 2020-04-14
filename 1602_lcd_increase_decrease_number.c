@@ -33,7 +33,7 @@ void clearLCD() {
 void selectStep(){
   int x;
   while (true) {
-    delay(125);
+    delay(133);
     x = analogRead(0);
     lcd.setCursor(8, 1);
     //Right
@@ -61,11 +61,11 @@ void selectStep(){
     else if(x < 800){
       if (stp == 0)
       {
-        lcd.print("Invalid")
+        lcd.print("Invalid");
       }else {
         cond = 0;
         break;
-
+        
       }
     }
   }
@@ -76,13 +76,14 @@ void loop() {
   {
     selectStep();
   }else {
-    lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Step up/down");
+    lcd.print("Step up/down: ");
+    lcd.print(stp);
     lcd.setCursor(0, 1);
     lcd.print("Number: ");
-    lcd.setCursor(8, 1);
+    lcd.setCursor(9, 1);
     lcd.print(counter);
+    delay(133);
     int button = analogRead(0);
     if(button < 200){
       counter += stp;
