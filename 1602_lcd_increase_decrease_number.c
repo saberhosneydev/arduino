@@ -81,6 +81,7 @@ void loop() {
     lcd.print(stp);
     lcd.setCursor(0, 1);
     lcd.print("Number: ");
+    clearLCD();
     lcd.setCursor(9, 1);
     lcd.print(counter);
     delay(133);
